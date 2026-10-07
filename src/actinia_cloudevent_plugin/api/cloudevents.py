@@ -90,7 +90,9 @@ class Cloudevent(Resource):
             )
             response = {
                 "status": 201,
-                "message": self.msg.replace("<EVENT1>", event_received.get_id())
+                "message": self.msg.replace(
+                    "<EVENT1>", event_received.get_id(),
+                )
                 .replace("<EVENT2>", new_event.get_id())
                 .replace("<ACTINIA_JOB>", queue_name),
                 "actinia_queue_name": queue_name,
